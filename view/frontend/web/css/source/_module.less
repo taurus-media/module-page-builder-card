@@ -1,0 +1,98 @@
+& when (@media-common = true) {
+    .pagebuilder-card {
+        border: 1px solid #D8D8D8;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .image {
+            position: relative;
+            height: 0;
+            width: 100%;
+            overflow: hidden;
+            padding-bottom: 72%;
+
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .content {
+            padding: 12px 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+
+
+            .title {
+                font-size: 2rem;
+                font-weight: 600;
+                color: @color-gray34;
+                overflow-wrap: break-word;
+            }
+
+            .description {
+                margin-top: 8px;
+            }
+
+            .actions {
+                margin-top: 24px
+            }
+        }
+    }
+
+    .pagebuilder-card-list {
+        .pagebuilder-column-line {
+            position: relative;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 1.25rem;
+            overflow: auto;
+            -ms-scroll-snap-type: x mandatory;
+            scroll-snap-type: x mandatory;
+            -ms-overflow-style: none;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            > .pagebuilder-column {
+                scroll-snap-align: start;
+                width: 80% !important;
+                flex: 1 1 auto;
+                flex-shrink: 0;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .pagebuilder-card-list {
+        .pagebuilder-column-line {
+            > .pagebuilder-column {
+                width: 40% !important;
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .pagebuilder-card-list {
+        .pagebuilder-column-line {
+            > .pagebuilder-column {
+                width: auto !important;
+                flex-shrink: 1;
+            }
+        }
+    }
+}
