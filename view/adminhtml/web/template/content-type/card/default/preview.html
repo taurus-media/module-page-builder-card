@@ -1,0 +1,40 @@
+<!--
+/**
+ * Copyright (c) 2024. Taurus. All rights reserved
+ * @author Alexander Tolochko
+ */
+-->
+
+<div class="pagebuilder-content-type pagebuilder-card-container" event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
+    <render args="getOptions().template" ></render>
+
+    <div class="pagebuilder-card" attr="data.main.attributes" css="data.main.css">
+        <div class="image pagebuilder-image">
+            <scope args="getUploader().getUiComponent()">
+                <render></render>
+            </scope>
+            <img if="getViewportImageData().attributes().src"
+                 attr="getViewportImageData().attributes"
+                 class="preview-image"
+                 css="getViewportImageData().css"
+                 ko-style="getViewportImageData().style" />
+        </div>
+        <div class="content">
+            <div class="content-inner">
+                <div class="title"
+                     attr="data.title.attributes"
+                     data-bind="liveEdit: { field: 'title', placeholder: 'Edit Title', selectAll: true }"></div>
+                <div class="description"
+                     attr="data.description.attributes"
+                     data-bind="liveEdit: { field: 'description', placeholder: 'Edit Description', selectAll: true }"></div>
+            </div>
+            <div class="actions">
+                <a attr="data.link.attributes"
+                   click="function (context, event) { return false; }">
+                    <span attr="data.link_text.attributes"
+                          data-bind="liveEdit: { field: 'button_text', placeholder: 'Button Text', selectAll: true }"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

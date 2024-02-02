@@ -1,0 +1,35 @@
+<!--
+/**
+ * Copyright (c) 2024. Taurus. All rights reserved
+ * @author Alexander Tolochko
+ */
+-->
+
+<div class="pagebuilder-card" attr="data.main.attributes" css="data.main.css">
+    <div class="image pagebuilder-image" if="data.desktop_image.attributes().src">
+        <a attr="data.link.attributes">
+            <picture>
+               <source if="data.mobile_image.attributes().src" media="(max-width: 767px)" srcset="data.mobile_image.attributes().src" />
+               <img attr="data.desktop_image.attributes" />
+            </picture>
+        </a>
+    </div>
+    <div class="content">
+        <div class="content-inner">
+            <a class="title"
+               if="data.title.html"
+               attr="data.link.attributes">
+                <span attr="data.title.attributes" html="data.title.html"></span>
+            </a>
+            <div class="description"
+                 if="data.description.html"
+                 attr="data.description.attributes"
+                 html="data.description.html"></div>
+        </div>
+        <div class="actions" if="data.link_text.html">
+            <a attr="data.link.attributes">
+                    <span attr="data.link_text.attributes" html="data.link_text.html"></span>
+            </a>
+        </div>
+    </div>
+</div>
