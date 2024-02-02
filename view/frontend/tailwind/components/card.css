@@ -1,0 +1,55 @@
+@layer utilities {
+    .card-snap {
+        -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+        -ms-overflow-style: none;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        & > div {
+            scroll-snap-align: start;
+        }
+    }
+}
+
+.pagebuilder-card-list {
+    .pagebuilder-column-line {
+        @apply relative flex flex-nowrap overflow-auto card-snap gap-3;
+
+        > .pagebuilder-column {
+            @apply flex-auto flex-shrink-0 !w-10/12 md:!w-5/12 lg:!w-full lg:flex-shrink;
+        }
+    }
+}
+
+.pagebuilder-card {
+    @apply border border-container h-full flex flex-col;
+
+    .image {
+        @apply relative h-0 w-full overflow-hidden pb-[72%];
+
+        img {
+            @apply absolute top-0 left-0 w-full block w-full h-full object-cover;
+        }
+    }
+
+    .content {
+        @apply py-4 px-3 2xl:px-6 flex flex-col justify-between h-full;
+
+        .title {
+            @apply text-lg lg:text-base xl:text-lg font-semibold break-words;
+        }
+
+        .description {
+            @apply mt-2;
+        }
+
+        .actions {
+            @apply mt-6;
+        }
+    }
+}
