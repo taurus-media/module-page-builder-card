@@ -16,16 +16,6 @@
     }
 }
 
-.pagebuilder-card-list {
-    .pagebuilder-column-line {
-        @apply relative flex flex-nowrap overflow-auto card-snap gap-3;
-
-        > .pagebuilder-column {
-            @apply flex-auto flex-shrink-0 !w-10/12 md:!w-5/12 lg:!w-full lg:flex-shrink;
-        }
-    }
-}
-
 .pagebuilder-card {
     @apply border border-container h-full flex flex-col;
 
@@ -50,6 +40,16 @@
 
         .actions {
             @apply mt-6;
+        }
+    }
+}
+
+.pagebuilder-card-list {
+    .pagebuilder-column-line {
+        @apply relative flex flex-nowrap overflow-auto card-snap gap-3;
+
+        > .pagebuilder-column {
+            @apply flex-auto flex-shrink-0 !w-10/12 md:!w-5/12 lg:!w-full lg:flex-shrink;
         }
     }
 }
