@@ -26,7 +26,9 @@
                     <element name="main">
                         <attribute name="name" source="data-content-type"/>
                         <attribute name="appearance" source="data-appearance"/>
-                        <css name="css_classes"/>
+                        <attribute name="description" source="data-has-description" converter="Taurus_PageBuilderCard/js/converter/bool"/>
+                        <attribute name="button_text" source="data-has-button" converter="Taurus_PageBuilderCard/js/converter/bool"/>
+                        <css name="css_classes" />
                     </element>
                     <element name="desktop_image">
                         <attribute name="image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
