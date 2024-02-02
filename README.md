@@ -1,29 +1,9 @@
-# README #
+# Page Builder Card module #
 
-This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+### Main Features: ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Introduced a new content type 'Card' in Magento Page Builder
+* Possibility to have short cards (with image and title only) and long cards (with image, title, description and read more link)
+* Default styling for Luma theme
+* Default styling for Hyva theme
