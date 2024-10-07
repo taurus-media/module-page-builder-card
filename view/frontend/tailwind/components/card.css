@@ -45,11 +45,96 @@
 }
 
 .pagebuilder-card-list {
-    .pagebuilder-column-line {
-        @apply relative flex flex-nowrap overflow-auto card-snap gap-3;
+    .pagebuilder-column-group {
+        &[data-mobile-layout="slider"] {
+            .pagebuilder-column-line {
+                @apply relative flex flex-nowrap overflow-auto card-snap gap-3;
 
-        > .pagebuilder-column {
-            @apply flex-auto flex-shrink-0 !w-10/12 md:!w-5/12 lg:!w-full lg:flex-shrink;
+                > .pagebuilder-column {
+                    @apply flex-auto flex-shrink-0 !w-10/12 md:!w-5/12 lg:!w-full lg:flex-shrink;
+                }
+            }
+        }
+
+        &[data-mobile-layout="1_column"] {
+            .pagebuilder-column-line {
+                @apply flex flex-col gap-2.5 sm:relative sm:flex-row sm:flex-nowrap sm:overflow-auto sm:card-snap sm:gap-3;
+
+                > .pagebuilder-column {
+                    @apply !w-full sm:flex-auto sm:flex-shrink-0 sm:!w-10/12 md:!w-5/12 lg:!w-full lg:flex-shrink;
+
+                    .pagebuilder-card {
+                        @apply relative flex flex-row sm:flex-col after:-translate-y-2/4 after:block after:absolute after:right-4 after:top-[52%];
+                        &:after {
+                            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 18L15 12L9 6' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                        }
+
+                        .pagebuilder-image {
+                            @apply w-[23%] pb-[23%] sm:w-full sm:pb-[72%];
+                        }
+
+                        .content {
+                            @apply justify-center h-auto px-2.5 py-3 sm:py-4 sm:px-3 2xl:px-6 sm:flex sm:flex-col sm:justify-between sm:h-full;
+
+                            .title {
+                                @apply text-black text-lg not-italic font-semibold leading-7 lg:text-base xl:text-lg sm:break-words;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &[data-mobile-layout="2_columns"] {
+            .pagebuilder-column-line {
+                @apply !grid grid-cols-[repeat(2,1fr)] gap-x-2.5 gap-y-3 sm:relative sm:!flex sm:flex-nowrap sm:overflow-auto sm:card-snap sm:gap-3;
+
+                > .pagebuilder-column {
+                    @apply !w-full sm:flex-auto sm:flex-shrink-0 sm:!w-10/12 md:!w-5/12 lg:!w-full lg:flex-shrink;
+
+                    .pagebuilder-card {
+                        @apply relative flex flex-col;
+
+                        .pagebuilder-image {
+                            @apply pb-[68%];
+                        }
+
+                        .content {
+                            @apply justify-center h-full px-4 py-2 sm:py-4 sm:px-3 2xl:px-6 sm:flex sm:flex-col sm:justify-between sm:h-full;
+
+                            .title {
+                                @apply text-black text-sm not-italic font-semibold leading-7 sm:text-lg lg:text-base xl:text-lg sm:break-words;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &[data-mobile-layout="3_columns"] {
+            .pagebuilder-column-line {
+                @apply !grid grid-cols-[repeat(3,1fr)] gap-x-1 gap-y-2.5 sm:relative sm:!flex sm:flex-nowrap sm:overflow-auto sm:card-snap sm:gap-3;
+
+                > .pagebuilder-column {
+                    @apply !w-full sm:flex-auto sm:flex-shrink-0 sm:!w-10/12 md:!w-5/12 lg:!w-full lg:flex-shrink;
+
+                    .pagebuilder-card {
+                        @apply relative flex flex-col;
+
+                        .pagebuilder-image {
+                            @apply pb-[100%];
+                        }
+
+                        .content {
+                            @apply justify-center h-full p-2 sm:py-4 sm:px-3 2xl:px-6 sm:flex sm:flex-col sm:justify-between sm:h-full;
+
+                            .title {
+                                @apply text-black text-[10px] not-italic font-semibold leading-7 sm:text-lg lg:text-base xl:text-lg sm:break-words;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
