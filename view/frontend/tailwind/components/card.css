@@ -28,10 +28,20 @@
     }
 
     .content {
-        @apply py-4 px-3 2xl:px-6 flex flex-col justify-between h-full;
+        @apply py-4 px-3 2xl:px-6 flex flex-col justify-between h-full leading-none;
+
+        [data-mobile-layout="2_columns"] &,
+        [data-mobile-layout="3_columns"] & {
+            @apply px-2 py-2.5;
+        }
 
         .title {
             @apply text-lg lg:text-base xl:text-lg font-semibold break-words;
+
+            [data-mobile-layout="2_columns"] &,
+            [data-mobile-layout="3_columns"] & {
+                @apply text-xs lg:text-base xl:text-lg;
+            }
         }
 
         .description {

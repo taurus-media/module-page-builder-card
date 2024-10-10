@@ -1,40 +1,74 @@
-.pagebuilder-column-group {
-    &[data-mobile-layout="1_column"],
-    &[data-mobile-layout="2_columns"],
-    &[data-mobile-layout="3_columns"] {
-        --cols-num: 1;
-        --cols-gap: 0.5rem;
+/*
+ * Common styles for mobiles and tablets
+ */
+@media screen and (max-width: 1023px) {
+    .pagebuilder-column-group {
+        &[data-mobile-layout="1_column"],
+        &[data-mobile-layout="2_columns"],
+        &[data-mobile-layout="3_columns"] {
+            --cols-num: 1;
+            --cols-gap: 0.5rem;
 
-        > .pagebuilder-column-line {
-            gap: var(--cols-gap);
+            > .pagebuilder-column-line {
+                gap: var(--cols-gap);
 
-            @apply lg:flex-nowrap;
+                @apply flex-wrap lg:flex-nowrap;
 
-            > .pagebuilder-column {
-                @apply !w-flex-cols lg:!w-0 mobileonly:flex-shrink-0 mobileonly:flex-grow-0 flex-auto;
+                > .pagebuilder-column {
+                    @apply flex-shrink-0 flex-grow-0 flex-auto;
+
+                    width: calc((100% - var(--cols-gap) * (var(--cols-num) - 1)) / var(--cols-num)) !important;
+                }
             }
         }
-    }
 
-    &[data-mobile-layout="1_column"] {
-        --cols-num: 1;
-    }
+        &[data-mobile-layout="slider"] {
+            .pagebuilder-column-line {
+                @apply relative flex flex-nowrap overflow-auto card-snap gap-3;
 
-    &[data-mobile-layout="2_columns"] {
-        --cols-num: 2;
-    }
-
-    &[data-mobile-layout="3_columns"] {
-        --cols-num: 3;
-    }
-
-    &[data-mobile-layout="slider"] {
-        .pagebuilder-column-line {
-            @apply relative flex flex-nowrap overflow-auto card-snap gap-3;
-
-            > .pagebuilder-column {
-                @apply flex-auto flex-shrink-0 !w-10/12 md:!w-5/12 lg:!w-full lg:flex-shrink;
+                > .pagebuilder-column {
+                    @apply flex-auto flex-shrink-0 !w-10/12 md:!w-5/12;
+                }
             }
         }
     }
 }
+
+/*
+ * Mobiles
+ */
+@media screen and (max-width: 767px) {
+    .pagebuilder-column-group {
+        &[data-mobile-layout="1_column"] {
+            --cols-num: 1;
+        }
+
+        &[data-mobile-layout="2_columns"] {
+            --cols-num: 2;
+        }
+
+        &[data-mobile-layout="3_columns"] {
+            --cols-num: 3;
+        }
+    }
+}
+
+/*
+ * Tablets
+ */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .pagebuilder-column-group {
+        &[data-tablet-layout="1_column"] {
+            --cols-num: 1;
+        }
+
+        &[data-tablet-layout="2_columns"] {
+            --cols-num: 2;
+        }
+
+        &[data-tablet-layout="3_columns"] {
+            --cols-num: 3;
+        }
+    }
+}
+

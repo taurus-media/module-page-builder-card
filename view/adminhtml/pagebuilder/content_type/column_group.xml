@@ -5,6 +5,7 @@
             <appearance name="default">
                 <elements>
                     <element name="main">
+                        <attribute name="tablet_layout" source="data-tablet-layout"/>
                         <attribute name="mobile_layout" source="data-mobile-layout"/>
                     </element>
                 </elements>
