@@ -7,6 +7,7 @@
 * Default styling for Luma theme
 * Default styling for Hyva theme
 * On mobiles, cards displayed as a slider
+* Possibility to select columns layout fot mobiles and tablets
 
 ### Usage
 1. Add a 'Columns' element in Page Builder
