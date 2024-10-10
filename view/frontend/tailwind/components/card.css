@@ -28,11 +28,11 @@
     }
 
     .content {
-        @apply py-4 px-3 2xl:px-6 flex flex-col justify-between h-full leading-none;
+        @apply py-4 px-3 2xl:px-6 flex flex-col justify-between h-full;
 
         [data-mobile-layout="2_columns"] &,
         [data-mobile-layout="3_columns"] & {
-            @apply px-2 py-2.5;
+            @apply px-2 py-2.5 2xl:px-6 text-sm lg:text-base;
         }
 
         .title {
@@ -40,7 +40,7 @@
 
             [data-mobile-layout="2_columns"] &,
             [data-mobile-layout="3_columns"] & {
-                @apply text-xs lg:text-base xl:text-lg;
+                @apply text-sm lg:text-base xl:text-lg;
             }
         }
 
