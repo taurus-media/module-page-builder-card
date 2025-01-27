@@ -1,11 +1,12 @@
 /*
- * Common styles for mobiles and tablets
+ * Mobiles
  */
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 767px) {
     .pagebuilder-column-group {
         &[data-mobile-layout="1_column"],
         &[data-mobile-layout="2_columns"],
-        &[data-mobile-layout="3_columns"] {
+        &[data-mobile-layout="3_columns"],
+        &[data-mobile-layout="4_columns"] {
             --cols-num: 1;
             --cols-gap: 0.5rem;
 
@@ -22,6 +23,22 @@
             }
         }
 
+        &[data-mobile-layout="1_column"] {
+            --cols-num: 1;
+        }
+
+        &[data-mobile-layout="2_columns"] {
+            --cols-num: 2;
+        }
+
+        &[data-mobile-layout="3_columns"] {
+            --cols-num: 3;
+        }
+
+        &[data-mobile-layout="4_columns"] {
+            --cols-num: 4;
+        }
+
         &[data-mobile-layout="slider"] {
             .pagebuilder-column-line {
                 @apply relative flex flex-nowrap overflow-auto card-snap gap-3;
@@ -35,29 +52,30 @@
 }
 
 /*
- * Mobiles
- */
-@media screen and (max-width: 767px) {
-    .pagebuilder-column-group {
-        &[data-mobile-layout="1_column"] {
-            --cols-num: 1;
-        }
-
-        &[data-mobile-layout="2_columns"] {
-            --cols-num: 2;
-        }
-
-        &[data-mobile-layout="3_columns"] {
-            --cols-num: 3;
-        }
-    }
-}
-
-/*
  * Tablets
  */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .pagebuilder-column-group {
+        &[data-tablet-layout="1_column"],
+        &[data-tablet-layout="2_columns"],
+        &[data-tablet-layout="3_columns"],
+        &[data-tablet-layout="4_columns"] {
+             --cols-num: 1;
+             --cols-gap: 0.5rem;
+
+            > .pagebuilder-column-line {
+                gap: var(--cols-gap);
+
+                @apply flex-wrap lg:flex-nowrap;
+
+                > .pagebuilder-column {
+                    @apply flex-shrink-0 flex-grow-0 flex-auto;
+
+                    width: calc((100% - var(--cols-gap) * (var(--cols-num) - 1)) / var(--cols-num)) !important;
+                }
+            }
+        }
+
         &[data-tablet-layout="1_column"] {
             --cols-num: 1;
         }
@@ -68,6 +86,10 @@
 
         &[data-tablet-layout="3_columns"] {
             --cols-num: 3;
+        }
+
+        &[data-tablet-layout="4_columns"] {
+            --cols-num: 4;
         }
     }
 }
