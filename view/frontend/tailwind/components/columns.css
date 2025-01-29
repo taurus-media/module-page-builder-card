@@ -44,7 +44,7 @@
                 @apply relative flex flex-nowrap overflow-auto card-snap gap-3;
 
                 > .pagebuilder-column {
-                    @apply flex-auto flex-shrink-0 !w-10/12 md:!w-5/12;
+                    @apply flex-auto flex-shrink-0 !w-10/12;
                 }
             }
         }
@@ -90,6 +90,16 @@
 
         &[data-tablet-layout="4_columns"] {
             --cols-num: 4;
+        }
+
+        &[data-tablet-layout="slider"] {
+            .pagebuilder-column-line {
+                @apply relative flex flex-nowrap overflow-auto card-snap gap-3;
+
+                > .pagebuilder-column {
+                    @apply flex-auto flex-shrink-0 !w-5/12;
+                }
+            }
         }
     }
 }
