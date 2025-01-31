@@ -44,7 +44,7 @@
                         <html name="title" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
                     </element>
                     <element name="description">
-                        <html name="description" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                        <html name="description" converter="Magento_PageBuilder/js/converter/html/directive"/>
                     </element>
                     <element name="link">
                         <attribute name="link_url" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
