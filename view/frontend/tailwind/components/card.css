@@ -16,7 +16,7 @@
     }
 }
 
-.pagebuilder-card {
+[data-content-type="card"]{
     @apply border border-container h-full flex flex-col;
 
     .image {
