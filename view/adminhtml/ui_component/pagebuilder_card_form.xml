@@ -31,7 +31,7 @@
             </settings>
         </dataProvider>
     </dataSource>
-    <fieldset name="appearance_fieldset" component="Magento_PageBuilder/js/form/element/dependent-fieldset">
+    <fieldset name="appearance_fieldset" sortOrder="10" component="Magento_PageBuilder/js/form/element/dependent-fieldset">
         <settings>
             <label translate="true">Appearance</label>
             <additionalClasses>
@@ -112,7 +112,7 @@
                 </imageUploader>
             </formElements>
         </field>
-        <field name="title" sortOrder="20" formElement="input">
+        <field name="title" sortOrder="20" formElement="textarea">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="source" xsi:type="string">page</item>
@@ -123,6 +123,13 @@
                 <dataType>text</dataType>
                 <label translate="true">Title</label>
             </settings>
+            <formElements>
+                <textarea>
+                    <settings>
+                        <rows>2</rows>
+                    </settings>
+                </textarea>
+            </formElements>
         </field>
         <field name="description" sortOrder="30" template="ui/form/field" formElement="wysiwyg">
             <argument name="data" xsi:type="array">
