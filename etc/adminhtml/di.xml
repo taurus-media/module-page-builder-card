@@ -13,6 +13,12 @@
                 <item name="0" xsi:type="array">
                     <item name="value" xsi:type="string">default</item>
                     <item name="title" xsi:type="string" translate="true">Default</item>
+                    <item name="icon" xsi:type="string">Taurus_PageBuilderCard::images/content-type/card/appearance/default.svg</item>
+                </item>
+                <item name="1" xsi:type="array">
+                    <item name="value" xsi:type="string">contained</item>
+                    <item name="title" xsi:type="string" translate="true">Contained</item>
+                    <item name="icon" xsi:type="string">Taurus_PageBuilderCard::images/content-type/card/appearance/contained.svg</item>
                 </item>
             </argument>
         </arguments>

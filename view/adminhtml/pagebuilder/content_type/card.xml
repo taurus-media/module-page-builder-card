@@ -57,6 +57,46 @@
                     </element>
                 </elements>
             </appearance>
+            <appearance default="true"
+                        name="contained"
+                        preview_template="Taurus_PageBuilderCard/content-type/card/contained/preview"
+                        master_template="Taurus_PageBuilderCard/content-type/card/contained/master"
+                        reader="Magento_PageBuilder/js/master-format/read/configurable">
+                <elements>
+                    <element name="main">
+                        <attribute name="name" source="data-content-type"/>
+                        <attribute name="appearance" source="data-appearance"/>
+                        <attribute name="description" source="data-has-description" converter="Taurus_PageBuilderCard/js/converter/bool"/>
+                        <attribute name="button_text" source="data-has-button" converter="Taurus_PageBuilderCard/js/converter/bool"/>
+                        <css name="css_classes" />
+                    </element>
+                    <element name="desktop_image">
+                        <attribute name="image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                    </element>
+                    <element name="mobile_image">
+                        <attribute name="mobile_image" source="src" converter="Magento_PageBuilder/js/converter/attribute/src" preview_converter="Magento_PageBuilder/js/converter/attribute/preview/src"/>
+                        <attribute name="alt" source="alt"/>
+                        <attribute name="title_attribute" source="title"/>
+                    </element>
+                    <element name="title">
+                        <html name="title" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                    <element name="description">
+                        <html name="description" converter="Magento_PageBuilder/js/converter/html/directive"/>
+                    </element>
+                    <element name="link">
+                        <attribute name="link_url" reader="Magento_PageBuilder/js/property/link" persistence_mode="read"/>
+                        <attribute name="virtual_link_href" storage_key="link_url" source="href" converter="Magento_PageBuilder/js/converter/attribute/link-href" persistence_mode="write"/>
+                        <attribute name="virtual_link_target" storage_key="link_url" source="target" converter="Magento_PageBuilder/js/converter/attribute/link-target" persistence_mode="write"/>
+                        <attribute name="virtual_link_type" storage_key="link_url" source="data-link-type" converter="Magento_PageBuilder/js/converter/attribute/link-type" persistence_mode="write"/>
+                    </element>
+                    <element name="link_text">
+                        <html name="button_text" converter="Magento_PageBuilder/js/converter/html/tag-escaper"/>
+                    </element>
+                </elements>
+            </appearance>
         </appearances>
         <additional_data>
             <item name="uploaderConfig" xsi:type="array">
