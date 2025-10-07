@@ -28,6 +28,7 @@
                         <attribute name="appearance" source="data-appearance"/>
                         <attribute name="description" source="data-has-description" converter="Taurus_PageBuilderCard/js/converter/bool"/>
                         <attribute name="button_text" source="data-has-button" converter="Taurus_PageBuilderCard/js/converter/bool"/>
+                        <style name="display" source="display" converter="Magento_PageBuilder/js/converter/style/display" preview_converter="Magento_PageBuilder/js/converter/style/preview/display"/>
                         <css name="css_classes" />
                     </element>
                     <element name="desktop_image">
@@ -68,6 +69,7 @@
                         <attribute name="appearance" source="data-appearance"/>
                         <attribute name="description" source="data-has-description" converter="Taurus_PageBuilderCard/js/converter/bool"/>
                         <attribute name="button_text" source="data-has-button" converter="Taurus_PageBuilderCard/js/converter/bool"/>
+                        <style name="display" source="display" converter="Magento_PageBuilder/js/converter/style/display" preview_converter="Magento_PageBuilder/js/converter/style/preview/display"/>
                         <css name="css_classes" />
                     </element>
                     <element name="desktop_image">

@@ -8,7 +8,7 @@
 <div class="pagebuilder-content-type pagebuilder-card-container" event="{ mouseover: onMouseOver, mouseout: onMouseOut }, mouseoverBubble: false">
     <render args="getOptions().template" ></render>
 
-    <div class="pagebuilder-card" attr="data.main.attributes" css="data.main.css">
+    <div class="pagebuilder-card" attr="data.main.attributes" css="data.main.css" ko-style="data.main.style">
         <div class="image pagebuilder-image">
             <scope args="getUploader().getUiComponent()">
                 <render></render>

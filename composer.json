@@ -1,6 +1,6 @@
 {
   "name": "taurus/module-page-builder-card",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Adds new element 'Card' to PageBuilder",
   "type": "magento2-module",
   "require": {
