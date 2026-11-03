@@ -8,6 +8,7 @@
 * Default styling for Hyva theme
 * On mobiles, cards displayed as a slider
 * Possibility to select columns layout fot mobiles and tablets
+* Card images get the card title as alt text on the storefront when alt is empty
 
 ### Usage
 1. Add a 'Columns' element in Page Builder
